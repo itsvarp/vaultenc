@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+@import "flag-icons/css/flag-icons.min.css";
+
+body {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  margin: 0;
+  padding: 0;
+  background-color: #111827;
+  color: #fff;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Allow text selection in input fields */
+input, textarea {
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+}
+
+/* Download Progress Styles */
+.download-progress-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.download-progress-modal {
+  background: #1f2937;
+  border-radius: 12px;
+  padding: 24px;
+  width: 400px;
+  max-width: 90vw;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border: 1px solid #374151;
+}
+
+.download-progress-modal.light {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  color: #111827;
+}
+
+.download-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.download-progress-header h3 {
+  margin: 0;
+  color: #f9fafb;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.light .download-progress-header h3 {
+  color: #111827;
+}
+
+.cancel-button {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.cancel-button:hover {
+  background: #374151;
+  color: #f9fafb;
+}
+
+.light .cancel-button:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.download-info {
+  margin-bottom: 20px;
+}
+
+.file-name {
+  margin-bottom: 12px;
+  color: #d1d5db;
+  font-size: 14px;
+}
+
+.light .file-name {
+  color: #6b7280;
+}
+
+.progress-container {
+  margin-bottom: 12px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 24px;
+  background: #374151;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.light .progress-bar {
+  background: #e5e7eb;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+  border-radius: 12px;
+  transition: width 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.progress-text {
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.download-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.light .download-stats {
+  color: #6b7280;
+}
+
+.download-speed {
+  color: #60a5fa;
+}
+
+.light .download-speed {
+  color: #2563eb;
+}
+
+.download-message {
+  text-align: center;
+  color: #d1d5db;
+}
+
+.light .download-message {
+  color: #6b7280;
+}
+
+.download-message p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.warning-text {
+  color: #fbbf24 !important;
+  font-weight: 500;
+}
+
+.light .warning-text {
+  color: #d97706 !important;
+}
+
+/* Update Success Toast Styles */
+.update-success-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10000;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.3s ease-in-out;
+  max-width: 400px;
+  min-width: 300px;
+}
+
+.update-success-toast.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.update-success-toast .toast-content {
+  background: var(--success-bg, #4caf50);
+  color: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border-left: 4px solid var(--success-border, #2e7d32);
+}
+
+.update-success-toast.dark .toast-content {
+  background: var(--success-bg-dark, #2e7d32);
+  border-left-color: var(--success-border-dark, #4caf50);
+}
+
+.update-success-toast .toast-icon {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.update-success-toast .toast-message {
+  flex: 1;
+}
+
+.update-success-toast .toast-message h4 {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.update-success-toast .toast-message p {
+  margin: 0;
+  font-size: 12px;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+.update-success-toast .toast-close {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.update-success-toast .toast-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}

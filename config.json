@@ -1,0 +1,7 @@
+{
+  "updateUrl": "https://raw.githubusercontent.com/itsvarp/vaultenc/main/version-info.json",
+  "appName": "VaultEnc",
+  "version": "5.0.0",
+  "autoUpdateEnabled": true,
+  "updateCheckInterval": 600000
+}

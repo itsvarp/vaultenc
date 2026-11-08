@@ -1,0 +1,30 @@
+{
+  "version": "5.0.0",
+  "downloadUrl": "https://github.com/itsvarp/vaultenc/releases/download/5.0.0/vaultenc-5.0.0.Setup.exe",
+  "releaseNotes": "Açıklama alanı eklendi ve performans iyileştirmeleri yapıldı.",
+  "mandatory": false,
+  "releaseDate": "2024-01-15",
+  "minVersion": "5.0.0",
+  "fileSize": "45.2 MB",
+  "checksum": "sha256:abc123def456...",
+  "changelog": [
+    "Hesap kartlarında açıklama alanı eklendi",
+    "UI/UX iyileştirmeleri",
+    "Güvenlik güncellemeleri",
+    "Bug düzeltmeleri"
+  ],
+  "platforms": {
+    "windows": {
+      "url": "https://github.com/itsvarp/vaultenc/releases/download/5.0.0/vaultenc-5.0.0.Setup.exe",
+      "size": "117 MB"
+    },
+    "mac": {
+      "url": "",
+      "size": "42.8 MB"
+    },
+    "linux": {
+      "url": "",
+      "size": "48.1 MB"
+    }
+  }
+}
